@@ -19,7 +19,10 @@ export class AppComponent {
   month: number = this.currentTime.getMonth() + 1;
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();
-  firstTask = {
-    description: "finish this to-do list"
-  }
+  firstTask: Task = new Task('make this to-do list');
+}
+
+export class Task {
+  public done: boolean = false;
+  constructor(public description: string) { }
 }
